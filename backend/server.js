@@ -12,14 +12,20 @@ const app = express();
 
 connectDB();
 
-
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://job-tracker-mznj0cns5-toniababys-projects.vercel.app/", // 
+];
 
 app.use(
   cors({
-    origin: [
-      "http://localhost:5173",
-      "https://your-vercel-frontend-name.vercel.app", // Update once deployed
-    ],
+    origin: function (origin, callback) {
+      if (!origin || allowedOrigins.indexOf(origin) !== -1) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
     credentials: true,
   })
 );
