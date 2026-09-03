@@ -13,8 +13,9 @@ import Dashboard from './pages/Dashboard';
 import Applications from './pages/Applications';
 import Kanban from './pages/Kanban';
 import Settings from './pages/Settings';
-import MyJobs from './pages/myJobs';
-import BrowseJobs from './pages/browseJobs';
+import MyJobs from './pages/MyJobs';
+import BrowseJobs from './pages/BrowseJobs';
+
 
 import {
   getApplications,
@@ -25,6 +26,7 @@ import {
   importApplications,
   getMyPostedJobs,
 } from './utils/api';
+
 
 export default function App() {
   const navigate = useNavigate();
