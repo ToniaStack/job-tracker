@@ -1,6 +1,6 @@
 import express from "express";
 import Application from "../models/Application.js";
-import authMiddleware from "../middleware/AuthMiddleware.js";
+import authMiddleware from "../middleware/authMiddleware.js";
 import {
   getApplications,
   getApplication,

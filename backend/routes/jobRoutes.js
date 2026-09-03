@@ -1,5 +1,5 @@
 import express from "express";
-import authMiddleware from "../middleware/AuthMiddleware.js";
+import authMiddleware from "../middleware/authMiddleware.js";
 import {
   getJobs,
   getMyJobs,
