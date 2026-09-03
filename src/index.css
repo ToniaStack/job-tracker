@@ -1,0 +1,103 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+
+  /* Your Brand Palette */
+  --color-primary-purple: #6B51ED;
+  --color-deep-purple: #623DF4;
+  --color-light-purple: #8A6DEE;
+  --color-soft-purple-bg: #F0EDFF;
+
+  --color-accent-green: #57934F;
+  --color-light-green-bg: #E8F3E8;
+
+  --color-surface-main: #F7F7F8;
+  --color-surface-card: #FFFFFF;
+  --color-surface-secondary: #F0EDFF;
+
+  --color-text-primary: #34364C;
+  --color-text-secondary: #6C6F85;
+  --color-text-muted: #9A9DAF;
+  --color-border-main: #E6E6EA;
+
+  /* Status Colors (Using your Green & Purples) */
+  --color-status-applied-bg: #F0EDFF;
+  --color-status-applied-text: #623DF4;
+  --color-status-interview-bg: #E8F3E8;
+  --color-status-interview-text: #57934F;
+  --color-status-assessment-bg: #FFF7ED;
+  --color-status-assessment-text: #C2410C;
+  --color-status-offer-bg: #E8F3E8;
+  --color-status-offer-text: #57934F;
+  --color-status-rejected-bg: #FEF2F2;
+  --color-status-rejected-text: #B91C1C;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-surface-main);
+  color: var(--color-text-primary);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-border-main);
+  border-radius: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+/* Toast animation */
+@keyframes toast-in {
+  from { opacity: 0; transform: translateY(12px) scale(0.96); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+.animate-toast-in {
+  animation: toast-in 0.25s ease-out;
+}
+
+/* Modal animation */
+@keyframes modal-in {
+  from { opacity: 0; transform: translateY(8px) scale(0.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+.animate-modal-in {
+  animation: modal-in 0.2s ease-out;
+}
+@keyframes overlay-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.animate-overlay-in {
+  animation: overlay-in 0.2s ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Custom focus ring */
+:focus-visible {
+  outline: 2px solid var(--color-primary-purple);
+  outline-offset: 2px;
+}
